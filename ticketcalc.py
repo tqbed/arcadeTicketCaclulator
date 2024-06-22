@@ -25,19 +25,14 @@ items = {
         "Macbook": 3.8725
     }
 
-# #returns value in CAD per ticket 
-# def calculate_price_per_ticket(item_name):
-#         tickets, price = items[item_name]
-#         return price / tickets
+print("Press 1 to find the price per ticket for an item.")
+#print("Press 2 to find the most valuable items for a given number of tickets.")
+choice = int(input("Enter your choice: "))
 
-# print("Press 1 to find the price per ticket for an item.")
-# #print("Press 2 to find the most valuable items for a given number of tickets.")
-# choice = int(input("Enter your choice: "))
-
-# if choice == 1:
-#     item_name = input("Enter the name of the item: ")
-#     if item_name in items:
-#         price_per_ticket = calculate_price_per_ticket(item_name)
-#         print("the value of a " + item_name + " is " + str(price_per_ticket))
-#     else:
-#         print("item not found, check for typos and try again")
+if choice == 1:
+    item_name = input("Enter the name of the item: ")
+    if item_name in items:
+        price_per_ticket = items[item_name]
+        print("the value of a " + item_name + " is " + str(price_per_ticket) "CAD per ticket")
+    else:
+        print("item not found, check for typos and try again")
