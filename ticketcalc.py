@@ -2,6 +2,8 @@ from fuzzywuzzy import process
 
 #all values in CAD 
 items = {
+        "Sticker": [1, 2],
+        "Sticker of Your Choice": [2, 4],
         "OpenAI Credits": [4, 13.7],
         "Domain": [4, 13.7],
         "Notebook": [5, 16.44],
