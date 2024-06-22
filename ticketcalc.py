@@ -56,14 +56,14 @@ if choice == 1:
     if item_name in items:
         price_per_ticket = items[item_name][1] / items[item_name][0]
         print("the value of a " + item_name + " is " + str(price_per_ticket) + " CAD per ticket")
-    else:
+    else: #use fuzzy wuzzy to find the closest match to the item name 
         closest_match = process.extractOne(item_name, items.keys())
         if closest_match[1] >= 80:
             corrected_item_name = closest_match[0]
             price_per_ticket = items[corrected_item_name][1] / items[corrected_item_name][0]
             print("Did you mean: " + corrected_item_name + "?")
             print("The value of a " + corrected_item_name + " is " + str(price_per_ticket) + " CAD per ticket")
-        else:
+        else: 
             print("Item not found")
 
 #finds as many purchasable valuable items for given ticket number           
