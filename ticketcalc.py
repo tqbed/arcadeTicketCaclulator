@@ -25,6 +25,8 @@ items = {
         "Macbook": [400, 1549]
     }
 
+#sorts everything into an ordered array of most value to least
+#then figures out how many items you can buy with the tickets you have going down the list 
 def find_valuable_items():
     global user_tickets
     global past_user_tickets
@@ -41,10 +43,12 @@ def find_valuable_items():
         else:
             user_tickets = past_user_tickets
 
+#prompt user, program start!
 print("Press 1 to find the price per ticket for an item.")
 print("Press 2 to find the most valuable items for a given number of tickets.")
 choice = int(input("Enter your choice: "))
 
+#just find values for a single item 
 if choice == 1:
     item_name = input("Enter the name of the item: ")
     if item_name in items:
@@ -52,7 +56,8 @@ if choice == 1:
         print("the value of a " + item_name + " is " + str(price_per_ticket) + " CAD per ticket")
     else:
         print("item not found, check for typos and try again")
-            
+
+#finds as many purchasable valuable items for given ticket number           
 elif choice == 2:
     user_tickets = int(input("Enter the number of tickets you have: "))
     past_user_tickets = user_tickets
