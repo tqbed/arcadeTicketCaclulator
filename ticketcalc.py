@@ -43,17 +43,17 @@ def find_valuable_items():
         if user_tickets - items[item][0] >= 0:
             user_tickets -= items[item][0]
             past_user_tickets = user_tickets
-            print(item + ": " + str(value) + " CAD per ticket (" + str(user_tickets) + " tickets remaining)")
+            print(item + ": " + str(round(value, 2)) + " CAD per ticket (" + str(user_tickets) + " tickets remaining)")
         else:
             user_tickets = past_user_tickets
 
 #prompt user, program start!
 print("Press 1 to find the price per ticket for an item.")
 print("Press 2 to find the most valuable items for a given number of tickets.")
-choice = int(input("Enter your choice: "))
+choice = input("Enter your choice: ")
 
 #just find values for a single item 
-if choice == 1:
+if choice == "1":
     item_name = input("Enter the name of the item: ")
     if item_name in items:
         price_per_ticket = items[item_name][1] / items[item_name][0]
@@ -64,16 +64,19 @@ if choice == 1:
             corrected_item_name = closest_match[0]
             price_per_ticket = items[corrected_item_name][1] / items[corrected_item_name][0]
             print("Did you mean: " + corrected_item_name + "?")
-            print("The value of a " + corrected_item_name + " is " + str(price_per_ticket) + " CAD per ticket")
+            print("The value of a " + corrected_item_name + " is " + str(round(price_per_ticket, 2)) + " CAD per ticket")
         else: 
             print("Item not found")
 
 #finds as many purchasable valuable items for given ticket number           
-elif choice == 2:
-    user_tickets = int(input("Enter the number of tickets you have: "))
-    past_user_tickets = user_tickets
+elif choice == "2":
+    try:
+        user_tickets = int(input("Enter the number of tickets you have: "))
         
-    if user_tickets <= 0:
-        print("You must enter a positive number of tickets")
-    else:
-        find_valuable_items()    
+        if user_tickets <= 0:
+            print("You must enter a positive number of tickets")
+        else:
+            past_user_tickets = user_tickets
+            find_valuable_items()
+    except ValueError:
+        print("Invalid choice")
