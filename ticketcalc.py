@@ -34,12 +34,12 @@ def find_valuable_items():
     valuable_items = {item: (price[1] / price[0]) for item, price in items.items()}
     sorted_valuable_items = sorted(valuable_items.items(), key=lambda x: x[1], reverse=True)
 
-    print("Based on your tickets, the most valuable items you can get are:")
+    print("Based on your " + str(user_tickets) + " tickets, the most valuable items you can get are:")
     for item, value in sorted_valuable_items:
         if user_tickets - items[item][0] >= 0:
             user_tickets -= items[item][0]
             past_user_tickets = user_tickets
-            print(item + ": " + str(value) + " CAD per ticket")
+            print(item + ": " + str(value) + " CAD per ticket (" + str(user_tickets) + " tickets remaining)")
         else:
             user_tickets = past_user_tickets
 
