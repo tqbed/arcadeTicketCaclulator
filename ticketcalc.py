@@ -1,0 +1,26 @@
+#all values in CAD 
+items = {
+        "OpenAI Credits": (4, 13.7),
+        "Domain": (4, 13.7),
+        "Notebook": (5, 16.44),
+        "Logic Analyzer": (5, 17),
+        "Breadboard": (6, 15),
+        "Multimeter": (7, 15),
+        "Arcade Ticket Counter": (7, 15),
+        "Soldering Iron": (8, 30),
+        "Pinecil": (14, 42),
+        "Yubikey": (15, 75.33),
+        "Keycaps": (15, 27.39),
+        "Octocat": (15, 29),
+        "Wacom": (25, 80),
+        "Backpack": (50, 183.53),
+        "Flipper": (70, 232.85),
+        "Keyboard": (75, 232.85),
+        "Framework Factory Seconds": (120, 679),
+        "Prusa": (130, 587),
+        "Bambu Lab": (135, 450),
+        "Framework 13 Inch": (175, 1909),
+        "Quest 3": (200, 650),
+        "Framework 16 Inch": (400, 2299),
+        "Macbook": (400, 1549)
+    }
